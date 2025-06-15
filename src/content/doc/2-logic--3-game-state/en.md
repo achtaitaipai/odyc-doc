@@ -86,7 +86,7 @@ game.player.sprite = `
 
 ---
 
-## <Emoji src="⏰" /> Turn
+## <Emoji src="⏰" /> `turn`
 
 The `game.turn` property lets you track the **number of turns** since the game started.
 A **turn** corresponds to **a player movement attempt**, whether the move is successful or not.
