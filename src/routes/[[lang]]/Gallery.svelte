@@ -47,3 +47,13 @@
 		onclick={() => carousel.scrollNext()}><Icon src={ChevronRight} class="size-7" /></button
 	>
 </div>
+
+<div class="container mx-auto mt-4 flex justify-end px-2">
+	<a
+		href="https://github.com/achtaitaipai/odyc-doc/issues/new?template=suggest-a-new-game.yml"
+		class="text-base-content/70 hover:text-accent flex items-center gap-1.5 transition"
+		target="_blank"
+	>
+		<span>{t('home.submit-game')}</span>
+	</a>
+</div>

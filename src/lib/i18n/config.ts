@@ -76,6 +76,7 @@ export const ui = {
 		'home.learn': 'Learn',
 		'home.create': 'Create a game',
 		'home.gallery': 'Gallery',
+		'home.submit-game': 'Submit a Game',
 		'meta.description':
 			'Odyc.js is a simple JavaScript library to create interactive narrative games, even without coding experience.'
 	},
@@ -147,6 +148,7 @@ export const ui = {
 		'home.learn': 'Apprendre',
 		'home.create': 'Créer un jeu',
 		'home.gallery': 'Galerie',
+		'home.submit-game': 'Soumetre un jeu',
 
 		'meta.description':
 			'Odyc.js est une bibliothèque JavaScript simple pour créer des jeux narratifs interactifs, même sans savoir coder.'

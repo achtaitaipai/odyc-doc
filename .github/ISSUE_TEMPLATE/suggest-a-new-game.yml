@@ -1,7 +1,7 @@
-name: 🕹️ Suggest a New Game
+name: Suggest a New Game
 description: Propose a new game to be added to the odyc.dev gallery
-title: "Title of the game"
-labels: ["new game", "to review"]
+title: 'Title of the game'
+labels: ['new game', 'to review']
 body:
   - type: input
     id: url
