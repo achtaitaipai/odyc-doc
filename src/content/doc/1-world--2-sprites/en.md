@@ -31,10 +31,10 @@ createGame({
 
 ## <Emoji src="🟦" /> A Simple Colored Block
 
-If you want an element to appear as a plain colored rectangle, just assign a number that corresponds to a palette color:
+If you want an element to appear as a plain colored rectangle, just assign a single character that corresponds to a palette color:
 
 ```js
-sprite: 5
+sprite: '5'
 ```
 
 ---
@@ -49,7 +49,7 @@ On one side, you can draw; on the other, you’ll see the code string that repre
 
 Each line represents a row of pixels, and each character is a pixel:
 
-- **Digit (0–9)**: corresponds to a specific palette color (e.g. `0` for black, `1` for white, etc.)
+- **Characters `0–9`, `a–z`, `A–Z`**: correspond to entries in your palette (up to 62 colors total)
 - **Newline**: starts a new row
 - **Spaces, tabs, blank lines**: are ignored
 - **Other characters**: represent transparent pixels (e.g. `.`)

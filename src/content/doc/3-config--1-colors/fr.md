@@ -9,50 +9,52 @@ import ColorsDemo from '../../../lib/ui/Doc/ColorsDemo.svelte'
 
 Odyc.js utilise une palette prédéfinie pour dessiner les sprites, les dialogues et les messages du jeu. Vous pouvez la remplacer ou l’ajuster comme vous le souhaitez.
 
+---
+
 ## <Emoji src="🌈" /> Personnaliser la palette
 
-Voici la palette prédéfinie. Cliquez sur une couleur pour copier son code hexadécimal.
+Voici la palette de couleurs par défaut. Cliquez sur une couleur pour copier son code hexadécimal.
 
 <ColorsDemo/>
 
-_Ces couleurs proviennent de l’excellente palette [Open Color](https://yeun.github.io/open-color/)._
+_Ces couleurs sont issues de l’excellente palette [Open Color](https://yeun.github.io/open-color/)._
 
-Vous pouvez remplacer cette palette avec votre propre liste de couleurs :
+Par **défaut**, la palette contient **10 couleurs**, accessibles via les caractères `0` à `9`.
+
+Cependant, vous pouvez définir jusqu’à **62 couleurs**.
+Dans ce cas, vous pouvez utiliser toute la plage suivante dans vos sprites :
+
+```
+0–9  → 10 premières couleurs
+a–z → 26 suivantes
+A–Z → 26 dernières
+```
+
+Chaque caractère dans un sprite correspond à une position dans le tableau `colors`.
 
 ```js
 createGame({
-	// ...
 	colors: [
-		'red',
-		'orange',
-		'lab(50% 40 59.5)',
-		'hwb(12 50% 0%)',
-		'#f06595',
-		'#f09',
-		'oklch(60% 0.15 50)',
-		'hsl(150 30% 60%)',
-		'light-dark(white, black)',
-		'black'
+		'red', // 0
+		'orange', // 1
+		'lab(50% 40 59.5)', // 2
+		'hwb(12 50% 0%)', // 3
+		'#f06595', // 4
+		'#f09', // 5
+		'oklch(60% 0.15 50)', // 6
+		'hsl(150 30% 60%)', // 7
+		'light-dark(white, black)', // 8
+		'black', // 9
+		'hotpink', // a
+		'#0000ff', // b
+		'#ffff00' // c
+		// etc.
 	]
 })
 ```
 
-`colors` doit recevoir un tableau de chaînes interprétées comme des [couleurs CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value)(noms de couleurs, codes hexadécimaux, RGB, HSL, LAB, etc...)
-
----
-
-## <Emoji src="🌈" /> Couleur de fond
-
-Utiliser `backround` pour paramétrer la couleur de fond.
-
-```javascript
-createGame({
-	//...
-	background: '#ff00ff'
-})
-```
-
-`background` doit recevoir une [couleur CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value) ou un chiffre correspondant à une couleur de la palette.
+Le tableau `colors` peut contenir **n’importe quelle valeur de couleur CSS valide** : noms, codes hexadécimaux, RGB, HSL, LAB, etc.
+[Voir la référence des formats](https://developer.mozilla.org/fr/docs/Web/CSS/color_value)
 
 ---
 
@@ -66,7 +68,7 @@ Vous pouvez également personnaliser l’apparence des boîtes de dialogue et de
 - `dialogBackground` → couleur du fond
 - `dialogBorder` → couleur de la bordure
 
-Ces valeurs peuvent être une [couleur CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value) ou un chiffre correspondant à une couleur de la palette.
+Ces valeurs peuvent être une [couleur CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value) ou un caractère correspondant à une couleur de la palette.
 
 ```javascript
 createGame({
@@ -88,7 +90,7 @@ Les couleurs définies pour la boîte de dialogue s'appliquent également à la 
 - `messageColor` → couleur du texte
 - `messageBackground` → couleur du fond
 
-Ces valeurs peuvent être une [couleur CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value) ou un chiffre correspondant à une couleur de la palette.
+Ces valeurs peuvent être une [couleur CSS](https://developer.mozilla.org/fr/docs/Web/CSS/color_value) ou un caractère correspondant à une couleur de la palette.
 
 ```javascript
 createGame({

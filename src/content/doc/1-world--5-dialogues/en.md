@@ -61,7 +61,7 @@ You can make your dialogue more expressive with simple syntax for **visual effec
 
 ### Colors
 
-To apply a color, wrap text in `<n>`, where `n` is the index of a color in [your palette](/doc/configuration/colors#customizing-the-palette):
+To apply a color, wrap text in `<c>`, where `c` is a character representing a color from [your palette](/doc/configuration/colors#customizing-the-palette):
 
 ```js
 '<3>Blue text<3>'

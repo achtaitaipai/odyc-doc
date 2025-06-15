@@ -4,7 +4,7 @@ import Emoji from '../../../lib/ui/Doc/Emoji.svelte'
 import PaintDemo from '../../../lib/ui/Doc/PaintDemo.svelte'
 </script>
 
-# <Emoji src="⚡" /> Modifier l’état du jeu
+# <Emoji src="⚡" /> L’état du jeu
 
 Pour modifier la grille, ajouter ou supprimer des éléments, vous pouvez utiliser l’objet `game`, qui fournit un ensemble de méthodes dédiées.
 
@@ -81,6 +81,14 @@ game.player.sprite = `
   .1.1.
 `
 ```
+
+---
+
+## <Emoji src="⏰"/> Turn
+
+`game.turn` vous permet de connaître le nombre de tours écoulés depuis le début de la partie. Un tour correspond à une tentative de déplacement.
+
+---
 
 ## <Emoji src="⚖️" /> `width` et `height`
 

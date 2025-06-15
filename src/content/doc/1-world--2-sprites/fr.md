@@ -30,10 +30,10 @@ createGame({
 
 ## <Emoji src="🟦" /> Un simple rectangle
 
-Si vous souhaitez que votre élément soit représenté par un rectangle de couleur, vous pouvez attribué un chiffre correspondant à une couleur de la palette.
+Si vous souhaitez que votre élément soit représenté par un rectangle de couleur, vous pouvez attribué un caractère correspondant à une couleur de la palette.
 
 ```js
-sprite: 5
+sprite: '5'
 ```
 
 ---
@@ -47,7 +47,7 @@ D'un côté, une zone de dessin que vous pouvez modifier, de l'autre, la descrip
 
 Chaque ligne représente une rangée de pixels, et chaque caractère correspond à un pixel.
 
-- **Chiffre (0–9)** : correspond à une couleur spécifique (par ex. `0` pour noir, `1` pour blanc, etc.).
+- **Caractères `0–9`, `a–z`, `A–Z`**: : correspond à une couleur spécifique (par ex. `0` pour noir, `1` pour blanc, etc.).
 - **Retour à la ligne** : commence une nouvelle rangée de pixels.
 - **Espaces, tabulations, lignes vides** : ignorés.
 - **Autres caractères** : pixels transparents (par exemple, `.`).

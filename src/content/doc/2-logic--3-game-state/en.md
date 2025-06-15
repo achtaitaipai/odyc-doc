@@ -4,7 +4,7 @@ import Emoji from '../../../lib/ui/Doc/Emoji.svelte'
 import PaintDemo from '../../../lib/ui/Doc/PaintDemo.svelte'
 </script>
 
-# <Emoji src="⚡" /> Modifying the Game State
+# <Emoji src="⚡" /> The Game State
 
 To update the grid, add or remove elements, you can use the `game` object, which provides a set of dedicated methods.
 
@@ -82,6 +82,23 @@ game.player.sprite = `
   .1.1.
   .1.1.
 `
+```
+
+---
+
+## <Emoji src="⏰" /> Turn
+
+The `game.turn` property lets you track the **number of turns** since the game started.
+A **turn** corresponds to **a player movement attempt**, whether the move is successful or not.
+
+```js
+const game = createGame({
+	onTurn() {
+		if (game.turn % 10 === 0) {
+			game.openMessage(`10 turns have passed!`)
+		}
+	}
+})
 ```
 
 ---
