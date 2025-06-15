@@ -7,7 +7,7 @@ body:
     id: url
     attributes:
       label: 🔗 Game URL
-      description: Direct link to the game or its repository
+      description: Direct link to the game
       placeholder: https://...
     validations:
       required: true
@@ -20,7 +20,6 @@ body:
       options:
         - English
         - French
-        - Multilingual
         - Other
     validations:
       required: false
