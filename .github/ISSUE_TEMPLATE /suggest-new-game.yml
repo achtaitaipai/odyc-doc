@@ -1,35 +1,12 @@
 name: 🕹️ Suggest a New Game
-description: Propose a new game to be added to the odyc.dev gallery
-title: "[New Game] Title of the game here"
-labels: ["new game", "to review"]
+description: Propose a new game for odyc.dev
+title: "[New Game] "
+labels: ["new game"]
 body:
   - type: input
     id: url
     attributes:
-      label: 🔗 Game URL
-      description: Direct link to the game
+      label: Game URL
       placeholder: https://...
     validations:
       required: true
-
-  - type: dropdown
-    id: language
-    attributes:
-      label: 🌐 Main Language
-      description: Language used in the game interface or dialogs
-      options:
-        - English
-        - French
-        - Multilingual
-        - Other
-    validations:
-      required: false
-
-  - type: textarea
-    id: notes
-    attributes:
-      label: 📝 Additional Notes (optional)
-      description: Add any context, background, or personal comment
-      placeholder: Write your message here...
-    validations:
-      required: false
