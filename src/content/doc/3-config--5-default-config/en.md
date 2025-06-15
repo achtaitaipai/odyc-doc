@@ -47,6 +47,7 @@ createGame({
 	dialogBackground: 0,
 	dialogColor: 1,
 	dialogBorder: 1,
+	dialogIntervalMs: 30,
 	screenWidth: 8,
 	screenHeight: 8,
 	cellWidth: 8,
