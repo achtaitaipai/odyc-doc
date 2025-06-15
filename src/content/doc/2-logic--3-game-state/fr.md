@@ -84,7 +84,7 @@ game.player.sprite = `
 
 ---
 
-## <Emoji src="⏰"/> Turn
+## <Emoji src="⏰"/> `turn`
 
 `game.turn` vous permet de connaître le nombre de tours écoulés depuis le début de la partie. Un tour correspond à une tentative de déplacement.
 
