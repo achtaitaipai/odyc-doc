@@ -1,12 +1,12 @@
-name: 🕹️ Suggest a New Game
+name: Suggest a new game
 description: Propose a new game for odyc.dev
-title: "[New Game] "
+title: "[New Game]"
 labels: ["new game"]
 body:
   - type: input
     id: url
     attributes:
       label: Game URL
-      placeholder: https://...
+      placeholder: e.g. https://example.com/
     validations:
       required: true
