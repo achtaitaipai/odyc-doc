@@ -28,7 +28,7 @@ If you prefer working locally **without a complex setup**, you can import Odyc.j
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://www.unpkg.com/odyc@0.0.18/dist/index.global.js"></script>
+		<script src="https://www.unpkg.com/odyc@latest/dist/index.global.js"></script>
 	</head>
 	<body>
 		<script>
