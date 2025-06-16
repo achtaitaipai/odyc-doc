@@ -1,35 +1,35 @@
 [
 	{ "img": "cdlr.png", "url": "https://jjjbon.itch.io/codedelaroute" },
-	{ "img": "dodog.png", "url": "https://achtaitaipai.github.io/odyc-exemples/games/dodog.html" },
+	{ "img": "dodog.png", "url": "https://achtaitaipai.github.io/odyc-games/games/dodog.html" },
 	{
 		"img": "morning.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/matin.html",
+		"url": "https://achtaitaipai.github.io/odyc-games/games/matin.html",
 		"lang": "en"
 	},
-	{ "img": "vroum.png", "url": "https://achtaitaipai.github.io/odyc-exemples/games/vroum.html" },
+	{ "img": "vroum.png", "url": "https://achtaitaipai.github.io/odyc-games/games/vroum.html" },
 	{
 		"img": "maison-hantee.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/maison-hantee.html",
+		"url": "https://achtaitaipai.github.io/odyc-games/games/maison-hantee.html",
 		"lang": "fr"
 	},
 	{
 		"img": "the-sweeper.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/balayeur.html"
+		"url": "https://achtaitaipai.github.io/odyc-games/games/balayeur.html"
 	},
 	{
 		"img": "island.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/island.html",
+		"url": "https://achtaitaipai.github.io/odyc-games/games/island.html",
 		"lang": "fr"
 	},
 	{ "img": "space-bar.png", "url": "https://jjjbon.itch.io/spacebar-odyc-beta" },
 	{ "img": "emily.png", "url": "https://goupilette.itch.io/emily-sest-perdue", "lang": "fr" },
 	{
 		"img": "john-wick.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/john-wick.html",
+		"url": "https://achtaitaipai.github.io/odyc-games/games/john-wick.html",
 		"lang": "en"
 	},
 	{
 		"img": "mushroom.png",
-		"url": "https://achtaitaipai.github.io/odyc-exemples/games/mushroom.html"
+		"url": "https://achtaitaipai.github.io/odyc-games/games/mushroom.html"
 	}
 ]
