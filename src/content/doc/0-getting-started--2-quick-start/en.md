@@ -1,5 +1,6 @@
 <script>
 import Emoji from '../../../lib/ui/Doc/Emoji.svelte'
+import Aside from '../../../lib/ui/Doc/Aside.svelte'
 </script>
 
 # <Emoji src="🚀" /> Getting Started with Odyc.js
@@ -28,7 +29,7 @@ If you prefer working locally **without a complex setup**, you can import Odyc.j
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://www.unpkg.com/odyc@0.0.18/dist/index.global.js"></script>
+		<script src="https://www.unpkg.com/odyc@latest/dist/index.global.js"></script>
 	</head>
 	<body>
 		<script>
@@ -41,6 +42,12 @@ If you prefer working locally **without a complex setup**, you can import Odyc.j
 ```
 
 3. Open the file in your browser.
+
+<Aside variant="Warning">
+
+Using `latest` may lead to unexpected breaking changes. For more stability, consider pinning a specific version
+
+</Aside>
 
 ---
 
