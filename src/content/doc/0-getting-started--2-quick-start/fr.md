@@ -28,7 +28,7 @@ Si vous préférez travailler localement **sans configuration complexe**, vous p
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://www.unpkg.com/odyc@0.0.18/dist/index.global.js"></script>
+		<script src="https://www.unpkg.com/odyc@latest/dist/index.global.js"></script>
 	</head>
 	<body>
 		<script>
@@ -41,6 +41,12 @@ Si vous préférez travailler localement **sans configuration complexe**, vous p
 ```
 
 3. Ouvrez le fichier dans un navigateur.
+
+<Aside variant="Warning">
+
+L'utilisation de `latest` peut entraîner des changements inattendus. Pour plus de stabilité, il est recommandé de fixer une version spécifique
+
+</Aside>
 
 ---
 
