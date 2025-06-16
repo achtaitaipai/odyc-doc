@@ -42,6 +42,12 @@ Si vous préférez travailler localement **sans configuration complexe**, vous p
 
 3. Ouvrez le fichier dans un navigateur.
 
+<Aside variant="Warning">
+
+L'utilisation de `latest` peut entraîner des changements inattendus. Pour plus de stabilité, il est recommandé de fixer une version spécifique
+
+</Aside>
+
 ---
 
 ## <Emoji src="🔧" /> Utiliser un bundler (Vite, Webpack…)
