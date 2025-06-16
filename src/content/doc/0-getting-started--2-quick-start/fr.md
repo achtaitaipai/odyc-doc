@@ -1,5 +1,6 @@
 <script>
 import Emoji from '../../../lib/ui/Doc/Emoji.svelte'
+import Aside from '../../../lib/ui/Doc/Aside.svelte'
 </script>
 
 # <Emoji src="🚀" /> Démarrer avec Odyc.js
