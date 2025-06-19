@@ -15,14 +15,15 @@ Vous pouvez ensuite attribuer un ensemble de propriétés à chaque `template`, 
 
 Chaque template accepte les propriétés suivantes:
 
-| Propriété | Valeur par défaut | Description                                                                                                                           |
-| --------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `solid`   | `false`           | Définit si le joueur peut passer au travers de l'élément.                                                                             |
-| `visible` | `true`            | Définit si la sprite est affichée ou non.                                                                                             |
-| `sprite`  | Aucun             | Définit l'apparence de l'objet ([voir sprites](/fr/doc/world-building/sprites))                                                       |
-| `sound`   | Aucun             | Son joué à l’interaction ([voir sons](/fr/doc/world-building/sounds))                                                                 |
-| `dialog`  | Aucun             | Message affiché dans la boîte de dialogue quand le joueur interagit avec l’objet ([voir dialogues](/fr/doc/world-building/dialogues)) |
-| `end`     | Aucun             | Déclenche la fin du jeu avec un message personnalisé ([voir titre & fin de jeu](/fr/doc/world-building/title-and-end))                |
+| Propriété    | Valeur par défaut | Description                                                                                                                           |
+| ------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `solid`      | `true`            | Définit si le joueur peut passer au travers de l'élément.                                                                             |
+| `visible`    | `true`            | Définit si la sprite est affichée ou non.                                                                                             |
+| `foreground` | `false`           | Définit si la sprite doit être dessinée devant le joueur.                                                                             |
+| `sprite`     | Aucun             | Définit l'apparence de l'objet ([voir sprites](/fr/doc/world-building/sprites))                                                       |
+| `sound`      | Aucun             | Son joué à l’interaction ([voir sons](/fr/doc/world-building/sounds))                                                                 |
+| `dialog`     | Aucun             | Message affiché dans la boîte de dialogue quand le joueur interagit avec l’objet ([voir dialogues](/fr/doc/world-building/dialogues)) |
+| `end`        | Aucun             | Déclenche la fin du jeu avec un message personnalisé ([voir titre & fin de jeu](/fr/doc/world-building/title-and-end))                |
 
 ```js
 createGame({
