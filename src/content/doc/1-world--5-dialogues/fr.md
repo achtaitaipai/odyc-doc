@@ -83,3 +83,20 @@ Si vous souhaitez afficher un caractère réservé (comme `%`, `~`, `_`, `^`, `=
 affichera :
 
 _Il ne me reste que 56% de batterie_
+
+---
+
+## <Emoji src="🏎️"/> Vitesse d'affichage des dialogues
+
+La vitesse d'affichage des dialogues peut être ajustée dans la configuration initiale du jeu à l'aide de la clé `dialogIntervalMs` :
+
+```js
+createGame({
+	//...
+	dialogIntervalMs: 15
+})
+```
+
+La valeur correspond au nombre de millisecondes attendues entre chaque caractère.
+
+Valeur par défaut : `30`

@@ -86,3 +86,20 @@ To display a reserved character (like `%`, `~`, `_`, `^`, `=`, `°`), escape it 
 will display:
 
 _I only have 56% battery left_
+
+---
+
+## <Emoji src="🏎️"/> Dialogue Speed
+
+The display speed of dialogues can be adjusted in the initial game configuration using the `dialogIntervalMs` key:
+
+```js
+createGame({
+	//...
+	dialogIntervalMs: 15
+})
+```
+
+The value represents the number of milliseconds to wait between each character.
+
+Default value: `30`
