@@ -71,7 +71,7 @@ Only one element can exist per cell. If the cell is already occupied, the existi
 
 ## <Emoji src="🐒" /> `player`
 
-The `game.player` object gives you access to the **player** and lets you change their `position` and `sprite`:
+The `game.player` object gives you access to the **player**, and lets you change their `position` and `sprite`:
 
 ```js
 game.player.position = [5, 6]
@@ -82,6 +82,15 @@ game.player.sprite = `
   .1.1.
   .1.1.
 `
+```
+
+The `player` object also exposes the `direction` value.
+This is a read-only property that reflects the last direction the player attempted to move in.
+It updates every time the player presses a movement key, even if the move fails (e.g. because of a wall).
+
+```js
+const dir = game.player.direction
+// Example: [0, -1] for a move upward
 ```
 
 ---

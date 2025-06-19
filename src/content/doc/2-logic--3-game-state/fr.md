@@ -82,7 +82,12 @@ game.player.sprite = `
 `
 ```
 
----
+L'objet `player` expose également la valeur `direction`. Elle est en lecture seule et reflète la dernière direction tentée par le joueur. Elle est mise à jour à chaque fois que le joueur appuie sur une touche de déplacement, même si le mouvement échoue (par exemple à cause d’un mur).
+
+```js
+const dir = game.player.direction
+// Exemple : [0, -1] pour un déplacement vers le haut
+```
 
 ## <Emoji src="⏰"/> `turn`
 
