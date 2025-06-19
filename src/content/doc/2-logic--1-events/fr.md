@@ -141,7 +141,7 @@ createGame({
 })
 ```
 
-La fonction reçoit un argument `input` qui peut être égal à `TOP`, `RIGHT`, `BOTTOM`, `LEFT` ou `ACTION`.
+La fonction reçoit un argument `input` qui peut être égal à `UP`, `RIGHT`, `DOWN`, `LEFT` ou `ACTION`.
 
 ### <Emoji src="⏰"/> `player.onTurn`
 

@@ -141,7 +141,7 @@ createGame({
 })
 ```
 
-The function receives an `input` argument, which can be one of: `TOP`, `RIGHT`, `BOTTOM`, `LEFT`, or `ACTION`.
+The function receives an `input` argument, which can be one of: `UP`, `RIGHT`, `DOWN`, `LEFT`, or `ACTION`.
 
 ---
 
