@@ -76,31 +76,3 @@ To import a sprite from one of these sites into your game, simply **right-click 
 
 </Aside>
 
----
-
-## <Emoji src="🔤" /> Text Characters as Sprites
-
-For quick prototyping or text-based games, you can convert any single character into an 8×8 sprite using the `charToSprite()` helper function:
-
-```js
-import { createGame, charToSprite } from 'odyc'
-
-createGame({
-	player: {
-		// Character 'A' in color '1'
-		sprite: charToSprite('A')
-	},
-	templates: [
-		{
-			// Character '@' in color '3'
-			sprite: charToSprite('@', '3')
-		}
-	]
-	//...
-})
-```
-
-**Parameters:**
-
-- `char` (string): Any character to convert into a sprite
-- `color` (string, optional): Palette color to use for the character. Default:`1`

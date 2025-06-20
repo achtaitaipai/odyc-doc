@@ -54,5 +54,10 @@ export const docSummary: DocSummary = [
 				path: '3-config--5-default-config'
 			}
 		]
+	},
+	{
+		en: 'Helpers',
+		fr: 'Utilitaires',
+		items: [{ en: 'charToSprite', fr: 'charToSprite', path: '4-helpers--1-char-to-sprite' }]
 	}
 ]
