@@ -55,10 +55,10 @@ createGame({
 	background: 1,
 	volume: 0.5,
 	controls: {
-		LEFT: 'ArrowLeft',
-		RIGHT: 'ArrowRight',
-		UP: 'ArrowUp',
-		DOWN: 'ArrowDown',
+		LEFT: ['ArrowLeft', 'KeyA'],
+		RIGHT: ['ArrowRight', 'KeyD'],
+		UP: ['ArrowUp', 'KeyW'],
+		DOWN: ['ArrowDown', 'KeyS'],
 		ACTION: ['Enter', 'Space']
 	}
 })

@@ -6,7 +6,7 @@ import KeyDemo from '../../../lib/ui/Doc/KeyDemo.svelte'
 
 # <Emoji src="🎮" /> Custom Controls
 
-By default, Odyc.js uses the arrow keys and **Space** or **Enter** to move and interact.
+By default, Odyc.js uses the arrow keys or **WASD** keys for movement, and **Space** or **Enter** to interact.
 
 But you can fully redefine the control scheme using the `controls` option.
 
@@ -18,10 +18,10 @@ Here’s the default control configuration if none is specified:
 
 ```js
 controls: {
-  LEFT: 'ArrowLeft',
-  RIGHT: 'ArrowRight',
-  UP: 'ArrowUp',
-  DOWN: 'ArrowDown',
+  LEFT: ['ArrowLeft', 'KeyA'],
+  RIGHT: ['ArrowRight', 'KeyD'],
+  UP: ['ArrowUp', 'KeyW'],
+  DOWN: ['ArrowDown', 'KeyS'],
   ACTION: ['Enter', 'Space']
 }
 ```
