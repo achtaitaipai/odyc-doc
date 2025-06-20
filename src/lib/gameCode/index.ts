@@ -19,7 +19,7 @@ export const buildGame = (code: string, debug = true) => `
 	}
   <script>
     ${odyc}
-    const {createGame, createSound} = odyc
+    const {createGame, createSound, charToString, vec2} = odyc
 //startofthegame
 ${code}
 //endofthegame
