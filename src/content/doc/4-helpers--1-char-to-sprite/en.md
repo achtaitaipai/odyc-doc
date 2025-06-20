@@ -36,13 +36,3 @@ createGame({
 - `color` (string, optional) : Palette color to use for the character. Default: `1`
 
 **Returns:** An 8×8 sprite string representation of the character.
-
----
-
-## <Emoji src="💡" /> Use Cases
-
-This function is particularly useful for:
-
-- **Rapid prototyping** when you need placeholder graphics
-- **Text-based or ASCII-style games**
-- **Creating consistent character-based visual systems**
