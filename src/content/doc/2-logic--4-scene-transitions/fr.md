@@ -15,24 +15,28 @@ Pour créer plusieurs scènes dans votre jeu, appelez simplement `createGame()` 
 function openMenu() {
 	createGame({
 		// Configuration du menu
-		templates: [{
-			sprite: '1',
-			onCollide() {
-				openGame() // Aller au jeu
+		templates: [
+			{
+				sprite: '1',
+				onCollide() {
+					openGame() // Aller au jeu
+				}
 			}
-		}]
+		]
 	})
 }
 
 function openGame() {
 	createGame({
 		// Configuration du jeu
-		templates: [{
-			sprite: '2', 
-			onCollide() {
-				openMenu() // Retour au menu
+		templates: [
+			{
+				sprite: '2',
+				onCollide() {
+					openMenu() // Retour au menu
+				}
 			}
-		}]
+		]
 	})
 }
 
@@ -74,21 +78,25 @@ La méthode `game.clear()` permet de stopper le jeu et remplacer l'affichage par
 
 ```js
 const game = createGame({
-	templates: [{
-		sprite: '1',
-		onCollide() {
-			game.clear() // Efface avec la couleur de fond
-			// ou
-			game.clear('0') // Efface avec une couleur spécifique
-			
-			// Puis créer une nouvelle scène
-			createNewScene()
+	templates: [
+		{
+			sprite: '1',
+			async onCollide() {
+				await game.openMessage('...')
+				game.clear('0') // Efface avec une couleur spécifique
+
+				// Puis créer une nouvelle scène
+				createGame({
+					//...
+				})
+			}
 		}
-	}]
+	]
 })
 ```
 
 **Paramètre :**
+
 - `color` (string|number, optionnel) : Couleur d'effacement. Si non spécifiée, utilise la couleur de fond du jeu.
 
 <Aside>
@@ -96,3 +104,4 @@ const game = createGame({
 Généralement pas nécessaire, mais utile pour éviter un flash entre une scène avec un message et une nouvelle scène.
 
 </Aside>
+
