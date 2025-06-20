@@ -25,7 +25,7 @@
 		{/key}
 		<Pagination filePath={data.path} />
 	</article>
-	<aside class="sticky top-0 hidden h-screen w-2xs pt-16 xl:block">
+	<aside class="sticky top-[var(--header-height)] hidden h-screen w-2xs pt-16 xl:block">
 		{#key data.metadata.toc}
 			<Toc toc={data.metadata.toc} />
 		{/key}

@@ -54,15 +54,15 @@
 		{/if}
 		{#if matches || isOpen}
 			<nav
-				class="bg-base-100 border-border text-base-content fixed top-0 left-0 z-10 h-dvh w-2xs overflow-auto border-r px-8 pt-8 pb-8 lg:sticky lg:block"
+				class="bg-base-100 border-border text-base-content fixed top-[var(--header-height)] left-0 z-10 w-2xs overflow-auto border-r px-8 pt-8 pb-8 lg:sticky lg:block"
 				use:click_outside={() => (isOpen = false)}
 				transition:slideLeft
 			>
-				<ul class="space-y-12">
+				<ul class="space-y-6">
 					{#each docSummary as category}
 						<li class="">
 							<h2 class="font-bold">{category[lang]}</h2>
-							<ul class="mt-2 space-y-0.5">
+							<ul class="mt-1 space-y-0.5">
 								{#each category.items as post}
 									{@render item(category[defaultLang], post[defaultLang], post[lang])}
 								{/each}
@@ -74,3 +74,9 @@
 		{/if}
 	{/snippet}
 </MediaQuery>
+
+<style>
+	nav {
+		height: calc(100dvh - var(--header-height));
+	}
+</style>
