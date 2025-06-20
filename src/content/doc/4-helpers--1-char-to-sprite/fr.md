@@ -36,13 +36,3 @@ createGame({
 - `color` (string, optionnel) : Couleur de la palette à utiliser. Par défaut : `1`
 
 **Retour :** Une représentation de sprite 8×8 sous forme de chaîne de caractères.
-
----
-
-## <Emoji src="💡" /> Cas d'usage
-
-Cette fonction est particulièrement utile pour :
-
-- **Prototypage rapide** quand vous avez besoin de graphiques temporaires
-- **Jeux basés sur du texte** ou de style ASCII
-- **Créer des systèmes visuels cohérents** basés sur des caractères
