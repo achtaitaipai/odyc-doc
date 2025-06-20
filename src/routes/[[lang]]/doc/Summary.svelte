@@ -54,7 +54,7 @@
 		{/if}
 		{#if matches || isOpen}
 			<nav
-				class="bg-base-100 border-border text-base-content fixed top-0 left-0 z-10 h-dvh w-2xs overflow-auto border-r px-8 pt-8 lg:sticky lg:block"
+				class="bg-base-100 border-border text-base-content fixed top-0 left-0 z-10 h-dvh w-2xs overflow-auto border-r px-8 pt-8 pb-8 lg:sticky lg:block"
 				use:click_outside={() => (isOpen = false)}
 				transition:slideLeft
 			>
