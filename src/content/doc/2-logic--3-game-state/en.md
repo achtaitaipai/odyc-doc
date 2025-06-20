@@ -180,6 +180,27 @@ game.updateFilter({
 
 ---
 
+## <Emoji src="🚫" /> `clear`
+
+The `clear()` method stops the game and replaces the display with a solid color:
+
+```js
+game.clear() // Clear with background color
+// or
+game.clear('0') // Clear with specific color
+```
+
+**Parameter:**
+- `color` (string|number, optional): Color to clear with. If not specified, uses the game's background color.
+
+<Aside>
+
+Usually not necessary, but can be useful in some cases like between a scene with a message open and another scene.
+
+</Aside>
+
+---
+
 ## <Emoji src="🧠" /> Rendering Behavior
 
 Odyc automatically re-renders the screen **every time the game state changes**.

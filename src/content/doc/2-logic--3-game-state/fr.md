@@ -163,6 +163,27 @@ game.updateFilter({
 
 ---
 
+## <Emoji src="🚫" /> `clear`
+
+La méthode `clear()` permet de stopper le jeu et remplacer l'affichage par une couleur unie :
+
+```js
+game.clear() // Efface avec la couleur de fond
+// ou
+game.clear('0') // Efface avec une couleur spécifique
+```
+
+**Paramètre :**
+- `color` (string|number, optionnel) : Couleur d'effacement. Si non spécifiée, utilise la couleur de fond du jeu.
+
+<Aside>
+
+Généralement pas nécessaire, mais peut être utile dans certains cas comme entre une scène avec un message ouvert et une autre scène.
+
+</Aside>
+
+---
+
 ## <Emoji src="🧠" /> Comportement de rendu
 
 Odyc redessine automatiquement l’écran **à chaque fois que l’état du jeu change**.
