@@ -91,12 +91,13 @@ createGame({
 
 ---
 
-## <Emoji src="👀" /> Inspirations
+## <Emoji src="👀" /> Ressources
 
-Voici deux ressources qui peuvent vous aider à trouver des idées pour vos sprites:
+Voici des ressources qui peuvent vous aider à trouver des idées pour vos sprites:
 
 - [Pixeltwist](https://pixeltwist.achtaitaipai.com/) : propose une infinité de sprites générées aléatoirement.
 - [Baxel](https://baxel.achtaitaipai.com/) : une collection ouverte de sprites créées par la communauté.
+- [odyc-cli](https://github.com/Meldiron/odyc-cli) par Meldiron : un outil en ligne de commande pour créer des projets Odyc.js, convertir des images en sprites, et optimiser le flux de développement de jeux.
 
 <Aside>
 

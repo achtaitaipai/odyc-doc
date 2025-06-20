@@ -63,12 +63,13 @@ To make your code shorter, you can use `\n` instead of line breaks:
 
 ---
 
-## <Emoji src="👀" /> Sprite Inspiration
+## <Emoji src="👀" /> Resources
 
-Here are two useful resources for generating or browsing sprite ideas:
+Here are useful resources for generating or browsing sprite ideas:
 
 - [Pixeltwist](https://pixeltwist.achtaitaipai.com/) – an infinite stream of random sprites.
 - [Baxel](https://baxel.achtaitaipai.com/) – a growing, open collection of community-created sprites.
+- [odyc-cli](https://github.com/Meldiron/odyc-cli) by Meldiron – a command-line tool for scaffolding Odyc.js projects, converting images to sprites, and streamlining game development workflow.
 
 <Aside>
 
