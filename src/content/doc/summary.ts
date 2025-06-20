@@ -32,7 +32,12 @@ export const docSummary: DocSummary = [
 		items: [
 			{ en: 'Events', fr: 'Événements', path: '2-logic--1-events' },
 			{ en: 'Game Actions', fr: 'Actions du jeu', path: '2-logic--2-game-actions' },
-			{ en: 'Game State', fr: 'L’état du jeu', path: '2-logic--3-game-state' }
+			{ en: 'Game State', fr: "L'état du jeu", path: '2-logic--3-game-state' },
+			{
+				en: 'Scene Transitions',
+				fr: "Passer d'une scène à l'autre",
+				path: '2-logic--4-scene-transitions'
+			}
 		]
 	},
 	{
