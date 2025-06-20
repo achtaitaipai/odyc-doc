@@ -61,10 +61,12 @@ async function init() {
 	filesMap.set(
 		'/extra.d.ts',
 		`
-      import type { createGame as createGameImpl, createSound as createSoundImpl  } from "odyc";
+      import type { createGame as createGameImpl, createSound as createSoundImpl, charToSprite as charToSpriteImpl, vec2 as vec2Impl  } from "odyc";
       declare global { 
       const createGame: typeof createGameImpl;
       const createSound: typeof createSoundImpl;
+      const charToSprite: typeof charToSpriteImpl;
+      const vec2: typeof vec2Impl;
       }
       `
 	)
