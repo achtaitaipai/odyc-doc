@@ -18,7 +18,7 @@
 		width: '100%',
 		height: '6rem',
 		borderTop: '3px solid #495057',
-		zIndex: '10',
+		zIndex: '2147483647',
 		overflowY: 'scroll',
 		fontFamily:
 			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
@@ -55,7 +55,7 @@
 		lineHeight: 0,
 		bottom: '.3rem',
 		left: '.3rem',
-		zIndex: '11',
+		zIndex: '2147483647',
 		padding: '.25rem .5rem',
 		border: 'none',
 		backgroundColor: 'transparent',
