@@ -17,7 +17,9 @@
 </script>
 
 <Header />
-<div class="border-border bg-base-100 sticky top-0 z-10 border-b px-8 py-3 lg:hidden">
+<div
+	class="border-border bg-base-100 sticky top-[var(--header-height)] z-10 border-b px-8 py-3 lg:hidden"
+>
 	<button
 		class="text-base-content/70 hover:text-base-content flex cursor-pointer items-center gap-2"
 		onclick={() => (isMenuOpen = true)}
