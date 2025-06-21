@@ -1,4 +1,5 @@
 ;(function () {
+	let stopRecord = null
 	onload = () => {
 		addEventListener('message', (e) => {
 			if (e.ports[0]) {
@@ -8,13 +9,17 @@
 		})
 
 		messageListeners.set('screenshot', (e) => {
-			const screenshot = makeScreenshot()
-			screenshot.save('img')
+			makeScreenshot('odyc-screenshot')
 		})
 		messageListeners.set('start-record', (e) => {
+			stopRecord = startRecording()
 			port.postMessage({ type: 'start-record' })
 		})
 		messageListeners.set('stop-record', (e) => {
+			if (stopRecord) {
+				stopRecord('odyc-record')
+				stopRecord = null
+			}
 			port.postMessage({ type: 'stop-record' })
 		})
 	}
