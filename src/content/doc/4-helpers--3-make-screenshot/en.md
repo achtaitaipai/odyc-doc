@@ -5,7 +5,7 @@ import Emoji from '../../../lib/ui/Doc/Emoji.svelte'
 
 # <Emoji src="📸" /> makeScreenshot
 
-The `makeScreenshot()` function captures the current game screen and provides methods to save or access the screenshot data.
+The `makeScreenshot()` function captures the current game screen and downloads it as an image file.
 
 ---
 
@@ -21,27 +21,17 @@ const game = createGame({
 // Take screenshot when pressing Cmd/Ctrl + S
 document.addEventListener('keydown', (event) => {
 	if ((event.metaKey || event.ctrlKey) && event.code === 'KeyS') {
-		const screenshot = makeScreenshot()
-		screenshot.save('game-screenshot')
+		makeScreenshot('game-screenshot')
 	}
 })
 
 // Or take a screenshot programmatically
-const screenshot = makeScreenshot()
-
-// Save the screenshot as a file
-screenshot.save('my-game-screenshot')
-
-// Or access the data URL directly
-console.log(screenshot.dataUrl) // "data:image/png;base64,..."
+makeScreenshot('my-game-screenshot')
 ```
 
 ---
 
-## <Emoji src="📋" /> Return Value
+## <Emoji src="📋" /> Parameters
 
-The function returns an object with the following properties and methods:
-
-- `save(filename: string)` : Method to save the screenshot as a file with the specified filename
-- `dataUrl` (readonly string) : Base64-encoded data URL of the screenshot image
+- `filename` (string) : The filename for the downloaded screenshot file
 
