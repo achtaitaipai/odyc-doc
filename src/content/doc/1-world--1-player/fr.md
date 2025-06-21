@@ -71,3 +71,20 @@ createGame({
 ```
 
 Par défaut, le joueur apparaît en haut à gauche, à la position `[0, 0]`.
+
+---
+
+## <Emoji src="👻" /> Visibilité du joueur
+
+Vous pouvez contrôler si le joueur est visible avec la propriété `visible` :
+
+```js
+createGame({
+	player: {
+		sprite: 7,
+		visible: false
+	}
+})
+```
+
+Par défaut, le joueur est visible (`visible: true`).

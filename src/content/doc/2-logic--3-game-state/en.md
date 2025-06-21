@@ -71,7 +71,7 @@ Only one element can exist per cell. If the cell is already occupied, the existi
 
 ## <Emoji src="🐒" /> `player`
 
-The `game.player` object gives you access to the **player**, and lets you change their `position` and `sprite`:
+The `game.player` object gives you access to the **player**, and lets you change their `position`, `sprite`, and `visible` properties:
 
 ```js
 game.player.position = [5, 6]
@@ -82,6 +82,7 @@ game.player.sprite = `
   .1.1.
   .1.1.
 `
+game.player.visible = false
 ```
 
 The `player` object also exposes the `direction` value.

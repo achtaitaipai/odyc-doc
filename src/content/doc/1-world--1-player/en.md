@@ -71,3 +71,20 @@ createGame({
 ```
 
 By default, the player appears at the top-left corner of the map, at position `[0, 0]`.
+
+---
+
+## <Emoji src="👻" /> Player Visibility
+
+You can control whether the player is visible using the `visible` property:
+
+```js
+createGame({
+	player: {
+		sprite: 7,
+		visible: false
+	}
+})
+```
+
+By default, the player is visible (`visible: true`).

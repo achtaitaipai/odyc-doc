@@ -69,7 +69,7 @@ Il ne peut y avoir qu’un seul élément par case. Si la case est déjà occup�
 
 ## <Emoji src="🐒" /> `player`
 
-L’objet `game.player` permet d'accéder au **joueur**, et de modifier sa `position` et sa `sprite`:
+L’objet `game.player` permet d'accéder au **joueur**, et de modifier sa `position`, sa `sprite` et sa propriété `visible` :
 
 ```js
 game.player.position = [5, 6]
@@ -80,6 +80,7 @@ game.player.sprite = `
   .1.1.
   .1.1.
 `
+game.player.visible = false
 ```
 
 L'objet `player` expose également la valeur `direction`. Elle est en lecture seule et reflète la dernière direction tentée par le joueur. Elle est mise à jour à chaque fois que le joueur appuie sur une touche de déplacement, même si le mouvement échoue (par exemple à cause d’un mur).
