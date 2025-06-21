@@ -86,6 +86,13 @@ Documentation files are located in `src/content/doc/` and organized by category 
 - **File structure**: `[category]--[title]/{en,fr}.md`
 - **Required languages**: Always add content in both English (`en.md`) and French (`fr.md`)
 - **Markdown format**: Use MDsveX (Markdown + Svelte components)
+- **Navigation**: Update `src/content/doc/summary.ts` to include new documentation in the appropriate category
+
+#### Creating New Documentation Steps:
+1. Create directory: `src/content/doc/[category]--[order]-[title]/`
+2. Add English version: `en.md` with required structure
+3. Add French version: `fr.md` with translated content
+4. Update `src/content/doc/summary.ts` to include the new entry in the appropriate category's items array
 
 ### Documentation Patterns
 - **Sections**: Use `## <Emoji src="🔤" /> Section Title` format

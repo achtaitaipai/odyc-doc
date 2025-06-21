@@ -60,7 +60,8 @@ export const docSummary: DocSummary = [
 		fr: 'Utilitaires',
 		items: [
 			{ en: 'charToSprite', fr: 'charToSprite', path: '4-helpers--1-char-to-sprite' },
-			{ en: 'vec2', fr: 'vec2', path: '4-helpers--2-vec2' }
+			{ en: 'vec2', fr: 'vec2', path: '4-helpers--2-vec2' },
+			{ en: 'makeScreenshot', fr: 'makeScreenshot', path: '4-helpers--3-make-screenshot' }
 		]
 	}
 ]
