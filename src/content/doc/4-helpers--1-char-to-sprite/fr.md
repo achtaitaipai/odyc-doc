@@ -33,6 +33,6 @@ createGame({
 ## <Emoji src="📋" /> Paramètres
 
 - `char` (string) : N'importe quel caractère à convertir en sprite
-- `color` (string, optionnel) : Couleur de la palette à utiliser. Par défaut : `1`
+- `color` (string, optionnel) : Couleur de la palette à utiliser. Par défaut : `0`
 
 **Retour :** Une représentation de sprite 8×8 sous forme de chaîne de caractères.
