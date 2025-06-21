@@ -40,7 +40,7 @@ createGame({
 
 ## <Emoji src="🧭" /> Par où commencer ?
 
-La documentation est organisée en **trois grandes sections** :
+La documentation est organisée en **quatre grandes sections** :
 
 ### 🧱 Construction du monde
 
@@ -53,6 +53,10 @@ Rendez le monde interactif avec les événements et les actions.
 ### 🎨 Configuration
 
 Personnalisez l’apparence, les filtres, les touches, les couleurs et l’écran.
+
+### 🔧 Helpers
+
+Fonctions pour vous simplifier la vie lors du développement avec Odyc.
 
 ---
 
