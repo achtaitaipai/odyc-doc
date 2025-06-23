@@ -41,14 +41,14 @@ createGame({
 
 ---
 
-## <Emoji src="🎨" /> mergeSprite
+## <Emoji src="🎨" /> mergeSprites
 
 Combines multiple sprites into a single sprite by overlaying them on top of each other. Later sprites in the arguments will be drawn over earlier ones.
 
 ### <Emoji src="⚡" /> Usage
 
 ```js
-import { mergeSprite } from 'odyc'
+import { mergeSprites } from 'odyc'
 
 const basePlayerSprite = `
 		.....
@@ -62,12 +62,12 @@ const hatSprite = `
 		.000.
 		00000
 		`
-const playerSprite = mergeSprite(basePlayerSprite, hatSprite)
+const playerSprite = mergeSprites(basePlayerSprite, hatSprite)
 ```
 
 <Aside>
 
-**Note:** The `mergeSprite` function creates a new sprite without modifying the original sprites. Non-transparent characters from later sprites will overwrite characters from earlier sprites at the same position. Transparent pixels (`.`) allow lower layers to show through.
+**Note:** The `mergeSprites` function creates a new sprite without modifying the original sprites. Non-transparent characters from later sprites will overwrite characters from earlier sprites at the same position. Transparent pixels (`.`) allow lower layers to show through.
 
 </Aside>
 
@@ -78,3 +78,4 @@ const playerSprite = mergeSprite(basePlayerSprite, hatSprite)
 - `...sprites` (string, optional) : Additional sprites to merge on top
 
 **Returns:** A new sprite string with all input sprites merged together.
+
