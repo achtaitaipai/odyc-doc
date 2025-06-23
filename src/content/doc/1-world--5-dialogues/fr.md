@@ -88,15 +88,16 @@ _Il ne me reste que 56% de batterie_
 
 ## <Emoji src="🏎️"/> Vitesse d'affichage des dialogues
 
-La vitesse d'affichage des dialogues peut être ajustée dans la configuration initiale du jeu à l'aide de la clé `dialogIntervalMs` :
+La vitesse d'affichage des dialogues peut être ajustée dans la configuration initiale du jeu à l'aide de la clé `dialogSpeed` :
 
 ```js
 createGame({
 	//...
-	dialogIntervalMs: 15
+	dialogSpeed: 'FAST'
 })
 ```
 
-La valeur correspond au nombre de millisecondes attendues entre chaque caractère.
-
-Valeur par défaut : `30`
+Valeurs disponibles :
+- `'SLOW'` - Vitesse de frappe lente
+- `'NORMAL'` - Vitesse de frappe normale (par défaut)
+- `'FAST'` - Vitesse de frappe rapide

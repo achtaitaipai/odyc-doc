@@ -59,10 +59,10 @@ export const docSummary: DocSummary = [
 		en: 'Helpers',
 		fr: 'Utilitaires',
 		items: [
-			{ en: 'charToSprite', fr: 'charToSprite', path: '4-helpers--1-char-to-sprite' },
+			{ en: 'Sprite Helpers', fr: 'Utilitaires Sprite', path: '4-helpers--1-sprite' },
 			{ en: 'vec2', fr: 'vec2', path: '4-helpers--2-vec2' },
-			{ en: 'makeScreenshot', fr: 'makeScreenshot', path: '4-helpers--3-make-screenshot' },
-			{ en: 'startRecording', fr: 'startRecording', path: '4-helpers--4-start-recording' }
+			{ en: 'Recording', fr: 'Enregistrement', path: '4-helpers--3-recording' },
+			{ en: 'tick', fr: 'tick', path: '4-helpers--4-tick' }
 		]
 	}
 ]

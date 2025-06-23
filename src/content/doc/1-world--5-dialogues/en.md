@@ -91,15 +91,16 @@ _I only have 56% battery left_
 
 ## <Emoji src="🏎️"/> Dialogue Speed
 
-The display speed of dialogues can be adjusted in the initial game configuration using the `dialogIntervalMs` key:
+The display speed of dialogues can be adjusted in the initial game configuration using the `dialogSpeed` key:
 
 ```js
 createGame({
 	//...
-	dialogIntervalMs: 15
+	dialogSpeed: 'FAST'
 })
 ```
 
-The value represents the number of milliseconds to wait between each character.
-
-Default value: `30`
+Available values:
+- `'SLOW'` - Slow typing speed
+- `'NORMAL'` - Normal typing speed (default)
+- `'FAST'` - Fast typing speed
