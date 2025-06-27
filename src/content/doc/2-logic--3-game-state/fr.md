@@ -6,64 +6,108 @@ import PaintDemo from '../../../lib/ui/Doc/PaintDemo.svelte'
 
 # <Emoji src="⚡" /> L’état du jeu
 
-Pour modifier la grille, ajouter ou supprimer des éléments, vous pouvez utiliser l’objet `game`, qui fournit un ensemble de méthodes dédiées.
+Pour modifier la grille ou obtenir des informations sur le jeu, vous pouvez utiliser l'objet `game`, qui fournit un ensemble de méthodes dédiées
 
 ---
 
-## <Emoji src="🎯" /> `getCell`
+## <Emoji src="🎯" /> Lire/modifier une case à une position donnée
 
-Cette méthode permet d’obtenir un élément à une position donnée dans la grille, puis de modifier ses propriétés :
+### `getCellAt`
+
+`getCellAt` permet d'obtenir une case à une position donnée, puis de modifier ses propriétés:
 
 ```js
 const game = createGame()
-const element = game.getCell(9, 4)
-element.visible = false
+const cell = game.getCellAt(9, 4)
+cell.visible = false
 ```
 
-<Aside> 
+<Aside>
+
 Les propriétés sont les mêmes que pour [la cible des évènements](fr/doc/interaction-and-logique/evenements#proprietes-disponibles).
+
 </Aside>
 
----
+### `clearCellAt`
 
-## <Emoji src="⚙️" /> `setCell`
+Pour supprimer une case.
 
-Cette méthode permet de modifier directement un élément à une position donnée.
+```js
+game.clearCellAt(3, 4)
+```
+
+### `updateCellAt`
+
+Cette méthode permet de modifier plusieurs propriétés d'un élément à une position donnée.
 Elle prend trois paramètres : `x`, `y`, et un objet contenant les propriétés à modifier.
 
 ```js
-game.setCell(3, 4, {
+game.updateCellAt(3, 4, {
 	visible: false,
 	dialog: 'Je suis invisible'
 })
 ```
 
----
+### `setCellAt`
 
-## <Emoji src="🪏" /> `setAll`
-
-`setAll` permet de modifier **tous les éléments** portant un symbole donné :
+`setCellAt` permet d'appliquer un template à une case, si la case a déjà des paramètres ceux-ci seront écrasés.
 
 ```js
-game.setAll('#', {
-	visible: false
-})
+game.setCellAt(3, 2, '#')
 ```
 
 ---
 
-## <Emoji src="➕" /> `addToCell`
+## <Emoji src="🪏" /> Lire/modifier plusieurs cases
 
-Ajoute un nouvel élément sur une case donnée.
-Paramètres : position `x`, position `y`, et symbole de l’élément à ajouter.
+Il est également possible, de lire ou appliquer des modifications à plusieurs cases à la fois.
+
+### Query
+
+Pour ce faire vous devrez utiliser une query qui décrira à quelles cases vous vous adresser.
+
+| nom          | type                   | description                           |
+| ------------ | ---------------------- | ------------------------------------- |
+| `symbol`     | `string` ou `string[]` | le template, ou une liste de template |
+| `x`          | `number`               | Le numéro de la colonne               |
+| `y`          | `number`               | Le numéro de la rangée                |
+| `isOnScreen` | `boolean`              | `true` si l'objet est à l'écran       |
+| `visible`    | `boolean`              |
+| `sprite`     | `number` ou `string`   |
+| `dialog`     | `string` ou `string[]` |
+| `end`        | `string` ou `string[]` |
+
+### `getCells`
+
+Pour obtenir plusieurs `cases`, il faut utiliser la méthode `getCells(query)`
 
 ```js
-game.addToCell(3, 2, '#')
+const walls = game.getCells({ solid: true })
 ```
 
-<Aside variant="Warning">
-Il ne peut y avoir qu’un seul élément par case. Si la case est déjà occupée, l'élément présent sera supprimé.
-</Aside>
+### `clearCells`
+
+Vous pouvez supprimer plusieurs cases d'un coup avec `clearCells`.
+
+```js
+game.clearCells({ visible: false, x: 4 })
+```
+
+### `updateCells`
+
+La méthode `updateCells` permet de modifier plusieurs cases en une seule fois. Elle prend en paramètre une `query` suivi des paramètres à modifier.
+
+```js
+game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true })
+```
+
+### `setCells`
+
+`setCells` vous permet d'appliquer un `template` à plusieurs cases.
+
+```js
+game.setCells({isOnScreen: true}, '#')
+```
 
 ---
 
@@ -175,6 +219,7 @@ game.clear('0') // Efface avec une couleur spécifique
 ```
 
 **Paramètre :**
+
 - `color` (string|number, optionnel) : Couleur d'effacement. Si non spécifiée, utilise la couleur de fond du jeu.
 
 <Aside>
@@ -193,5 +238,5 @@ Si vous modifiez une propriété comme `sprite`, `position`, `dialog`, `visible`
 
 ```js
 game.player.sprite = newSprite
-game.setCell(3, 4, { visible: false })
+game.setCellAt(3, 4, { visible: false })
 ```
