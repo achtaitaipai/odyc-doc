@@ -6,66 +6,108 @@ import PaintDemo from '../../../lib/ui/Doc/PaintDemo.svelte'
 
 # <Emoji src="⚡" /> The Game State
 
-To update the grid, add or remove elements, you can use the `game` object, which provides a set of dedicated methods.
+To modify the grid or get information about the game, you can use the `game` object, which provides a set of dedicated methods.
 
 ---
 
-## <Emoji src="🎯" /> `getCell`
+## <Emoji src="🎯" /> Read/modify a cell at a given position
 
-This method lets you access an element at a specific position on the grid and modify its properties:
+### `getCellAt`
+
+`getCellAt` allows you to get a cell at a given position, then modify its properties:
 
 ```js
 const game = createGame()
-const element = game.getCell(9, 4)
-element.visible = false
+const cell = game.getCellAt(9, 4)
+cell.visible = false
 ```
 
 <Aside>
 
-The available properties are the same as those listed for [event targets](/doc/interaction-and-logic/events#available-properties).
+The properties are the same as those for [event targets](en/doc/logic/events#available-properties).
 
 </Aside>
 
----
+### `clearCellAt`
 
-## <Emoji src="⚙️" /> `setCell`
-
-This method modifies an element directly at a specific position.
-It takes three arguments: `x`, `y`, and an object with the properties to update.
+To remove a cell.
 
 ```js
-game.setCell(3, 4, {
+game.clearCellAt(3, 4)
+```
+
+### `updateCellAt`
+
+This method allows you to modify multiple properties of an element at a given position.
+It takes three parameters: `x`, `y`, and an object containing the properties to modify.
+
+```js
+game.updateCellAt(3, 4, {
 	visible: false,
 	dialog: 'I am invisible'
 })
 ```
 
----
+### `setCellAt`
 
-## <Emoji src="🪏" /> `setAll`
-
-`setAll` allows you to update **all elements** that share the same symbol:
+`setCellAt` allows you to apply a template to a cell, if the cell already has parameters they will be overwritten.
 
 ```js
-game.setAll('#', {
-	visible: false
-})
+game.setCellAt(3, 2, '#')
 ```
 
 ---
 
-## <Emoji src="➕" /> `addToCell`
+## <Emoji src="🪏" /> Read/modify multiple cells
 
-Adds a new element to a given cell.
-Parameters: position `x`, position `y`, and the symbol of the element to add.
+It is also possible to read or apply modifications to multiple cells at once.
+
+### Query
+
+To do this you will need to use a query that will describe which cells you are addressing.
+
+| name         | type                   | description                        |
+| ------------ | ---------------------- | ---------------------------------- |
+| `symbol`     | `string` or `string[]` | the template, or a list of template |
+| `x`          | `number`               | The column number                  |
+| `y`          | `number`               | The row number                     |
+| `isOnScreen` | `boolean`              | `true` if the object is on screen  |
+| `visible`    | `boolean`              |
+| `sprite`     | `number` or `string`   |
+| `dialog`     | `string` or `string[]` |
+| `end`        | `string` or `string[]` |
+
+### `getCells`
+
+To get multiple `cells`, you need to use the `getCells(query)` method
 
 ```js
-game.addToCell(3, 2, '#')
+const walls = game.getCells({ solid: true })
 ```
 
-<Aside variant="Warning">
-Only one element can exist per cell. If the cell is already occupied, the existing element will be removed.
-</Aside>
+### `clearCells`
+
+You can remove multiple cells at once with `clearCells`.
+
+```js
+game.clearCells({ visible: false, x: 4 })
+```
+
+### `updateCells`
+
+The `updateCells` method allows you to modify multiple cells at once. It takes a `query` parameter followed by the parameters to modify.
+
+```js
+game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true })
+```
+
+### `setCells`
+
+`setCells` allows you to apply a `template` to multiple cells.
+
+```js
+game.setCells({isOnScreen: true}, '#')
+```
 
 ---
 
@@ -98,18 +140,7 @@ const dir = game.player.direction
 
 ## <Emoji src="⏰" /> `turn`
 
-The `game.turn` property lets you track the **number of turns** since the game started.
-A **turn** corresponds to **a player movement attempt**, whether the move is successful or not.
-
-```js
-const game = createGame({
-	onTurn() {
-		if (game.turn % 10 === 0) {
-			game.openMessage(`10 turns have passed!`)
-		}
-	}
-})
-```
+`game.turn` allows you to know the number of turns elapsed since the beginning of the game. A turn corresponds to a movement attempt.
 
 ---
 
@@ -127,10 +158,10 @@ alert(`width: ${game.width}, height: ${game.height}`)
 ## <Emoji src="🌍" /> `loadMap`
 
 To load a new map, use `game.loadMap()`.
-It takes two arguments:
+The method takes two parameters:
 
-1. A new `map` string (multiline format),
-2. An optional position to reset the player.
+1. A new `map` as a multiline string,
+2. An optional position to relocate the player.
 
 ```js
 game.loadMap(
@@ -152,9 +183,9 @@ game.loadMap(
 
 ## <Emoji src="🎛️" /> `updateFilter`
 
-You can update the current filter settings using the `updateFilter` method.
+You can update the current filter settings with the `updateFilter` method.
 
-It accepts an object containing only the **settings to update** (all other settings remain unchanged).
+It takes an object containing **the settings to modify** (the others will remain unchanged).
 
 ```js
 const game = createGame({
@@ -175,7 +206,7 @@ game.updateFilter({
 
 <Aside variant="Warning">
 
-`updateFilter` cannot be used to change the **filter name**, only its **settings**.
+`updateFilter` does not allow changing the **name** of the filter, only its **settings**.
 
 </Aside>
 
@@ -183,7 +214,7 @@ game.updateFilter({
 
 ## <Emoji src="🚫" /> `clear`
 
-The `clear()` method stops the game and replaces the display with a solid color:
+The `clear()` method allows you to stop the game and replace the display with a solid color:
 
 ```js
 game.clear() // Clear with background color
@@ -192,7 +223,8 @@ game.clear('0') // Clear with specific color
 ```
 
 **Parameter:**
-- `color` (string|number, optional): Color to clear with. If not specified, uses the game's background color.
+
+- `color` (string|number, optional): Clear color. If not specified, uses the game's background color.
 
 <Aside>
 
@@ -204,11 +236,11 @@ Usually not necessary, but can be useful in some cases like between a scene with
 
 ## <Emoji src="🧠" /> Rendering Behavior
 
-Odyc automatically re-renders the screen **every time the game state changes**.
+Odyc automatically redraws the screen **every time the game state changes**.
 
-If you update a property like `sprite`, `position`, `dialog`, `visible`..., the game will reflect the change immediately:
+If you modify a property like `sprite`, `position`, `dialog`, `visible`..., the game is updated immediately:
 
 ```js
 game.player.sprite = newSprite
-game.setCell(3, 4, { visible: false })
+game.setCellAt(3, 4, { visible: false })
 ```
