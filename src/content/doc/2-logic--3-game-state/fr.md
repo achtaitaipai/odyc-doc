@@ -24,7 +24,7 @@ cell.visible = false
 
 <Aside>
 
-Les propriétés sont les mêmes que pour [la cible des évènements](fr/doc/interaction-and-logique/evenements#proprietes-disponibles).
+Les propriétés sont les mêmes que pour [la cible des évènements](/fr/doc/interaction-and-logic/events#proprietes-disponibles).
 
 </Aside>
 
@@ -106,7 +106,7 @@ game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true
 `setCells` vous permet d'appliquer un `template` à plusieurs cases.
 
 ```js
-game.setCells({isOnScreen: true}, '#')
+game.setCells({ isOnScreen: true }, '#')
 ```
 
 ---

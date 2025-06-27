@@ -24,7 +24,7 @@ cell.visible = false
 
 <Aside>
 
-The properties are the same as those for [event targets](en/doc/logic/events#available-properties).
+The properties are the same as those for [event targets](/doc/interaction-and-logic/events#available-properties).
 
 </Aside>
 
@@ -66,12 +66,12 @@ It is also possible to read or apply modifications to multiple cells at once.
 
 To do this you will need to use a query that will describe which cells you are addressing.
 
-| name         | type                   | description                        |
-| ------------ | ---------------------- | ---------------------------------- |
+| name         | type                   | description                         |
+| ------------ | ---------------------- | ----------------------------------- |
 | `symbol`     | `string` or `string[]` | the template, or a list of template |
-| `x`          | `number`               | The column number                  |
-| `y`          | `number`               | The row number                     |
-| `isOnScreen` | `boolean`              | `true` if the object is on screen  |
+| `x`          | `number`               | The column number                   |
+| `y`          | `number`               | The row number                      |
+| `isOnScreen` | `boolean`              | `true` if the object is on screen   |
 | `visible`    | `boolean`              |
 | `sprite`     | `number` or `string`   |
 | `dialog`     | `string` or `string[]` |
@@ -106,7 +106,7 @@ game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true
 `setCells` allows you to apply a `template` to multiple cells.
 
 ```js
-game.setCells({isOnScreen: true}, '#')
+game.setCells({ isOnScreen: true }, '#')
 ```
 
 ---
