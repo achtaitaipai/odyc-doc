@@ -28,12 +28,12 @@ The properties are the same as those for [event targets](/doc/interaction-and-lo
 
 </Aside>
 
-### `clearCellAt`
+### `setCellAt`
 
-To remove a cell.
+`setCellAt` allows you to apply a template to a cell, if the cell already has parameters they will be overwritten.
 
 ```js
-game.clearCellAt(3, 4)
+game.setCellAt(3, 2, '#')
 ```
 
 ### `updateCellAt`
@@ -48,12 +48,12 @@ game.updateCellAt(3, 4, {
 })
 ```
 
-### `setCellAt`
+### `clearCellAt`
 
-`setCellAt` allows you to apply a template to a cell, if the cell already has parameters they will be overwritten.
+To remove a cell.
 
 ```js
-game.setCellAt(3, 2, '#')
+game.clearCellAt(3, 4)
 ```
 
 ---
@@ -85,12 +85,12 @@ To get multiple `cells`, you need to use the `getCells(query)` method
 const walls = game.getCells({ solid: true })
 ```
 
-### `clearCells`
+### `setCells`
 
-You can remove multiple cells at once with `clearCells`.
+`setCells` allows you to apply a `template` to multiple cells.
 
 ```js
-game.clearCells({ visible: false, x: 4 })
+game.setCells({ isOnScreen: true }, '#')
 ```
 
 ### `updateCells`
@@ -101,12 +101,12 @@ The `updateCells` method allows you to modify multiple cells at once. It takes a
 game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true })
 ```
 
-### `setCells`
+### `clearCells`
 
-`setCells` allows you to apply a `template` to multiple cells.
+You can remove multiple cells at once with `clearCells`.
 
 ```js
-game.setCells({ isOnScreen: true }, '#')
+game.clearCells({ visible: false, x: 4 })
 ```
 
 ---

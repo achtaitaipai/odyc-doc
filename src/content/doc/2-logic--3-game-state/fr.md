@@ -28,12 +28,12 @@ Les propriétés sont les mêmes que pour [la cible des évènements](/fr/doc/in
 
 </Aside>
 
-### `clearCellAt`
+### `setCellAt`
 
-Pour supprimer une case.
+`setCellAt` permet d'appliquer un template à une case, si la case a déjà des paramètres ceux-ci seront écrasés.
 
 ```js
-game.clearCellAt(3, 4)
+game.setCellAt(3, 2, '#')
 ```
 
 ### `updateCellAt`
@@ -48,12 +48,12 @@ game.updateCellAt(3, 4, {
 })
 ```
 
-### `setCellAt`
+### `clearCellAt`
 
-`setCellAt` permet d'appliquer un template à une case, si la case a déjà des paramètres ceux-ci seront écrasés.
+Pour supprimer une case.
 
 ```js
-game.setCellAt(3, 2, '#')
+game.clearCellAt(3, 4)
 ```
 
 ---
@@ -85,12 +85,12 @@ Pour obtenir plusieurs `cases`, il faut utiliser la méthode `getCells(query)`
 const walls = game.getCells({ solid: true })
 ```
 
-### `clearCells`
+### `setCells`
 
-Vous pouvez supprimer plusieurs cases d'un coup avec `clearCells`.
+`setCells` vous permet d'appliquer un `template` à plusieurs cases.
 
 ```js
-game.clearCells({ visible: false, x: 4 })
+game.setCells({ isOnScreen: true }, '#')
 ```
 
 ### `updateCells`
@@ -101,12 +101,12 @@ La méthode `updateCells` permet de modifier plusieurs cases en une seule fois. 
 game.updateCells({ symbol: ['x', '#'], visible: true }, { sprite: 3, solid: true })
 ```
 
-### `setCells`
+### `clearCells`
 
-`setCells` vous permet d'appliquer un `template` à plusieurs cases.
+Vous pouvez supprimer plusieurs cases d'un coup avec `clearCells`.
 
 ```js
-game.setCells({ isOnScreen: true }, '#')
+game.clearCells({ visible: false, x: 4 })
 ```
 
 ---
