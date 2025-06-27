@@ -56,7 +56,7 @@ const game = createGame({
 document.addEventListener('keydown', (event) => {
 	if ((event.metaKey || event.ctrlKey) && event.code === 'KeyR') {
 		const stopAndSave = startRecording()
-		
+
 		// Arrêter l'enregistrement après 10 secondes
 		setTimeout(() => {
 			stopAndSave('enregistrement-gameplay')

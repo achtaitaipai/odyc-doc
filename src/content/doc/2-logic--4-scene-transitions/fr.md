@@ -104,4 +104,3 @@ const game = createGame({
 Généralement pas nécessaire, mais utile pour éviter un flash entre une scène avec un message et une nouvelle scène.
 
 </Aside>
-

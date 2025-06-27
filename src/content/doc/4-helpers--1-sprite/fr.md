@@ -78,4 +78,3 @@ const playerSprite = mergeSprites(basePlayerSprite, hatSprite)
 - `...sprites` (string, optionnel) : Sprites supplémentaires à fusionner par-dessus
 
 **Retour :** Une nouvelle chaîne de sprite avec tous les sprites d'entrée fusionnés ensemble.
-

@@ -1,10 +1,10 @@
 const texts = {
 	en: {
-		robot: 'Are you  a robot?',
+		robot: 'Are you  a robot?'
 	},
 	fr: {
-		robot: 'Êtes-vous un robot?',
-	},
+		robot: 'Êtes-vous un robot?'
+	}
 }
 
 /** @typedef {keyof typeof texts} Lang */
@@ -35,7 +35,7 @@ const game = createGame({
 			..7777..
 			.77..77.
 			`,
-		position: [1, 1],
+		position: [1, 1]
 	},
 	templates: {
 		// robot
@@ -52,13 +52,13 @@ const game = createGame({
 			`,
 			onCollide() {
 				game.openDialog(t('robot'))
-			},
+			}
 		},
 
 		// wall
 		x: {
-			sprite: 2,
-		},
+			sprite: 2
+		}
 	},
 	map: `
 	xxxxxxxx
@@ -70,10 +70,10 @@ const game = createGame({
 	x......x
 	xxxxxxxx
 	`,
-	background: 9,
+	background: 9
 })
 
 game.openMenu({
 	English: () => (lang = 'en'),
-	Français: () => (lang = 'fr'),
+	Français: () => (lang = 'fr')
 })

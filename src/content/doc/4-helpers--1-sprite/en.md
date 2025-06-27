@@ -78,4 +78,3 @@ const playerSprite = mergeSprites(basePlayerSprite, hatSprite)
 - `...sprites` (string, optional) : Additional sprites to merge on top
 
 **Returns:** A new sprite string with all input sprites merged together.
-

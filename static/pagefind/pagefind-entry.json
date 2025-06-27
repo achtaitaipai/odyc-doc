@@ -1,1 +1,7 @@
-{"version":"1.3.0","languages":{"en":{"hash":"en_9955888190","wasm":"en","page_count":16},"fr":{"hash":"fr_a01fa95649","wasm":"fr","page_count":16}}}
+{
+	"version": "1.3.0",
+	"languages": {
+		"en": { "hash": "en_9955888190", "wasm": "en", "page_count": 16 },
+		"fr": { "hash": "fr_a01fa95649", "wasm": "fr", "page_count": 16 }
+	}
+}

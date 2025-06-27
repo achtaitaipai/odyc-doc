@@ -1,13 +1,13 @@
 <script module>
-	import { GameWindow } from '$lib';
-	import { defineMeta } from '@storybook/addon-svelte-csf';
+	import { GameWindow } from '$lib'
+	import { defineMeta } from '@storybook/addon-svelte-csf'
 
 	const { Story } = defineMeta({
 		title: 'ui/GameWindow',
 		component: GameWindow,
 		tags: ['autodocs'],
 		argTypes: {}
-	});
+	})
 	const code = `
  createGame({
   player:{
@@ -25,7 +25,7 @@
   },
   background: 7,
 })
-`;
+`
 </script>
 
 <Story name="Primary" args={{ code, class: 'h-screen' }} />

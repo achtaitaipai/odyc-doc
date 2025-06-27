@@ -101,6 +101,7 @@ createGame({
 ```
 
 Available values:
+
 - `'SLOW'` - Slow typing speed
 - `'NORMAL'` - Normal typing speed (default)
 - `'FAST'` - Fast typing speed

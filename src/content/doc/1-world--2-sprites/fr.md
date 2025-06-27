@@ -104,4 +104,3 @@ Voici des ressources qui peuvent vous aider à trouver des idées pour vos sprit
 Pour importer une sprite depuis l’un de ces sites dans votre jeu, faites simplement **clic droit → copier l’image**, puis **collez-la dans l’outil de dessin** du [playground](/fr/playground).
 
 </Aside>
-

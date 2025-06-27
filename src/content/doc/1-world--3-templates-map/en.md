@@ -84,12 +84,14 @@ A `template` doesn’t have to be a fixed object —
 you can also define it as a **function that returns an object**.
 This is useful when you want to create elements that are **slightly different each time they appear**.
 
+The function receives the **position of the cell** as an argument with the shape `[number, number]`.
+
 For example, to create a wall where **each instance has a different color**:
 
 ```js
 createGame({
 	templates: {
-		x: () => ({
+		x: (position) => ({
 			sprite: Math.floor(Math.random() * 9)
 		})
 	}
@@ -98,4 +100,3 @@ createGame({
 ```
 
 The function is called **every time an `x` element is placed on the map**.
-This lets you introduce variability or conditional logic into your game world.

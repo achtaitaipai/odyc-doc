@@ -44,7 +44,8 @@ async function loadGame() {
 **Returns:** A `Promise<void>` that resolves when the next meaningful game state change occurs.
 
 ### When tick resolves:
+
 - After each game render cycle
 - When dialogs, messages, or prompts open
-- When dialogs, messages, or prompts close  
+- When dialogs, messages, or prompts close
 - When the game is cleared

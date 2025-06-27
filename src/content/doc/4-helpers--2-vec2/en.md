@@ -50,7 +50,8 @@ const divided = v.divide(2) // [2, 3]
 const v1 = vec2(0, 0)
 const v2 = vec2(3, 4)
 
-const distance = v1.distance(v2) // 5
+const distance = v1.distance(v2) // 5 (Euclidean distance)
+const manhattan = v1.manhattanDistance(v2) // 7 (Manhattan distance)
 const equal = v1.equals(v2) // false
 ```
 
@@ -72,3 +73,21 @@ v.x = 5
 v.y = 6
 ```
 
+---
+
+## <Emoji src="📋" /> Reference Table
+
+| Method/Property             | Parameters                     | Returns            | Description                          |
+| --------------------------- | ------------------------------ | ------------------ | ------------------------------------ |
+| `add(vector)`               | `vec2` or `[x, y]` or `(x, y)` | `vec2`             | Adds another vector                  |
+| `sub(vector)`               | `vec2` or `[x, y]` or `(x, y)` | `vec2`             | Subtracts another vector             |
+| `multiply(scalar)`          | `number`                       | `vec2`             | Multiplies by a scalar               |
+| `divide(scalar)`            | `number`                       | `vec2`             | Divides by a scalar                  |
+| `distance(vector)`          | `vec2` or `[x, y]`             | `number`           | Euclidean distance to another vector |
+| `manhattanDistance(vector)` | `vec2` or `[x, y]`             | `number`           | Manhattan distance to another vector |
+| `equals(vector)`            | `vec2` or `[x, y]`             | `boolean`          | Checks if vectors are equal          |
+| `length`                    | -                              | `number`           | Vector magnitude (read-only)         |
+| `direction`                 | -                              | `[number, number]` | Sign-based direction (read-only)     |
+| `value`                     | -                              | `[number, number]` | Get/set coordinates                  |
+| `x`                         | -                              | `number`           | Get/set x coordinate                 |
+| `y`                         | -                              | `number`           | Get/set y coordinate                 |

@@ -50,7 +50,8 @@ const division = v.divide(2) // [2, 3]
 const v1 = vec2(0, 0)
 const v2 = vec2(3, 4)
 
-const distance = v1.distance(v2) // 5
+const distance = v1.distance(v2) // 5 (distance euclidienne)
+const manhattan = v1.manhattanDistance(v2) // 7 (distance de Manhattan)
 const egal = v1.equals(v2) // false
 ```
 
@@ -72,3 +73,21 @@ v.x = 5
 v.y = 6
 ```
 
+---
+
+## <Emoji src="📋" /> Tableau de référence
+
+| Méthode/Propriété           | Paramètres                     | Retour             | Description                                  |
+| --------------------------- | ------------------------------ | ------------------ | -------------------------------------------- |
+| `add(vector)`               | `vec2` ou `[x, y]` ou `(x, y)` | `vec2`             | Ajoute un autre vecteur                      |
+| `sub(vector)`               | `vec2` ou `[x, y]` ou `(x, y)` | `vec2`             | Soustrait un autre vecteur                   |
+| `multiply(scalar)`          | `number`                       | `vec2`             | Multiplie par un scalaire                    |
+| `divide(scalar)`            | `number`                       | `vec2`             | Divise par un scalaire                       |
+| `distance(vector)`          | `vec2` ou `[x, y]`             | `number`           | Distance euclidienne vers un autre vecteur   |
+| `manhattanDistance(vector)` | `vec2` ou `[x, y]`             | `number`           | Distance de Manhattan vers un autre vecteur  |
+| `equals(vector)`            | `vec2` ou `[x, y]`             | `boolean`          | Vérifie si les vecteurs sont égaux           |
+| `length`                    | -                              | `number`           | Magnitude du vecteur (lecture seule)         |
+| `direction`                 | -                              | `[number, number]` | Direction basée sur le signe (lecture seule) |
+| `value`                     | -                              | `[number, number]` | Obtenir/définir les coordonnées              |
+| `x`                         | -                              | `number`           | Obtenir/définir la coordonnée x              |
+| `y`                         | -                              | `number`           | Obtenir/définir la coordonnée y              |

@@ -98,6 +98,7 @@ createGame({
 ```
 
 Valeurs disponibles :
+
 - `'SLOW'` - Vitesse de frappe lente
 - `'NORMAL'` - Vitesse de frappe normale (par défaut)
 - `'FAST'` - Vitesse de frappe rapide

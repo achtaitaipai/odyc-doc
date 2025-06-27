@@ -1,6 +1,6 @@
 const game = createGame({
-  player: {
-    sprite: `
+	player: {
+		sprite: `
 			........
 			..3333..
 			..3030..
@@ -10,14 +10,14 @@ const game = createGame({
 			..3..3..
 			.33..33.
 			`,
-    position: [1, 1]
-  },
-  templates: {
-    x: {
-      sprite: 2
-    },
-    k: {
-      sprite: `
+		position: [1, 1]
+	},
+	templates: {
+		x: {
+			sprite: 2
+		},
+		k: {
+			sprite: `
 			........
 			........
 			.....555
@@ -27,16 +27,16 @@ const game = createGame({
 			5....555
 			........
 			`,
-      onCollide(target) {
-        target.remove()
-        game.setAll('d', {
-          solid: false,
-          dialog: null
-        })
-      }
-    },
-    d: {
-      sprite: `
+			onCollide(target) {
+				target.remove()
+				game.setAll('d', {
+					solid: false,
+					dialog: null
+				})
+			}
+		},
+		d: {
+			sprite: `
 			...99...
 			..9999..
 			.999999.
@@ -46,13 +46,13 @@ const game = createGame({
 			.999999.
 			.999999.
 			`,
-      dialog: 'It looks closed.',
-      onEnter(target) {
-        target.remove()
-      }
-    }
-  },
-  map: `
+			dialog: 'It looks closed.',
+			onEnter(target) {
+				target.remove()
+			}
+		}
+	},
+	map: `
 	xxxxxxxx
 	x....k.x
 	x......x
@@ -62,5 +62,5 @@ const game = createGame({
 	x......x
 	xxxxxxxx
 	`,
-  background: 1
+	background: 1
 })

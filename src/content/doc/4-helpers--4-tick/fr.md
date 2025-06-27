@@ -49,4 +49,3 @@ async function loadGame() {
 - Quand les dialogues, messages ou prompts s'ouvrent
 - Quand les dialogues, messages ou prompts se ferment
 - Quand le jeu est effacé
-

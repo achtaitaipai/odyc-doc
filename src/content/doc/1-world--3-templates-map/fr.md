@@ -84,12 +84,14 @@ Un `template` ne doit pas forcément être un objet fixe.
 Vous pouvez aussi le définir comme une **fonction** qui retourne un objet.
 C’est utile si vous souhaitez créer des éléments **légèrement différents à chaque apparition**.
 
+La fonction reçoit la **position de la cellule** en argument sous la forme `[number, number]`.
+
 Par exemple, pour créer un mur dont **chaque instance a une couleur différente** :
 
 ```js
 createGame({
 	templates: {
-		x: () => ({
+		x: (position) => ({
 			sprite: Math.floor(Math.random() * 9)
 		})
 	}
