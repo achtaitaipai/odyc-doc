@@ -17,6 +17,7 @@ This is the documentation website for Odyc.js (https://odyc.dev), a JavaScript l
 ## Development Commands
 
 ### Core Development
+
 ```bash
 npm run dev              # Start development server
 npm run build            # Build for production
@@ -28,6 +29,7 @@ npm run lint             # Check formatting with Prettier
 ```
 
 ### Content & Build Process
+
 ```bash
 npm run postbuild:search   # Generate search index with Pagefind
 npm run postbuild:sitemap  # Generate sitemap
@@ -35,6 +37,7 @@ npm run postbuild          # Both search index and sitemap (runs after build)
 ```
 
 ### Storybook (Component Development)
+
 ```bash
 npm run storybook         # Start Storybook dev server (port 6006)
 npm run build-storybook   # Build Storybook for production
@@ -43,31 +46,36 @@ npm run build-storybook   # Build Storybook for production
 ## Architecture
 
 ### SvelteKit Structure
+
 - **Static Site Generation**: Uses `@sveltejs/adapter-static` for deployment
 - **Preprocessing**: MDsveX for Markdown processing with Svelte components
 - **Styling**: TailwindCSS v4 with custom design system
 - **TypeScript**: Strict mode enabled throughout
 
 ### Content Management
+
 - **Documentation**: Markdown files in `src/content/doc/` organized by language (`en.md`, `fr.md`)
 - **Examples**: Game code examples in `src/content/examples/`
 - **Internationalization**: Centralized in `src/lib/i18n/` with language routing via `[[lang]]` parameter
 
 ### Key Components & Libraries
+
 - **Game Engine Integration**: Embeds Odyc.js library for live game previews
 - **Code Editor**: CodeMirror 6 with TypeScript support, Vim mode, and custom themes
-- **Visual Tools**: 
+- **Visual Tools**:
   - Paint editor for sprite creation
-  - Map editor for game level design  
+  - Map editor for game level design
   - Sound generator using PFXR
 - **Search**: Pagefind for static site search
 
 ### Game Code Architecture
+
 - **Sandbox Execution**: Games run in iframe with `srcdoc` for security
 - **Communication**: PostMessage API for editor-game communication
 - **Code Processing**: Custom parsing to extract user code from template
 
 ### Component Organization
+
 - **Reusable UI**: All components in `src/lib/ui/` and exported from `src/lib/index.ts`
 - **Storybook Integration**: Stories in `src/stories/` for component development
 - **Design System**: Consistent styling with TailwindCSS utilities and custom color palette
@@ -82,19 +90,23 @@ npm run build-storybook   # Build Storybook for production
 ## Documentation Guidelines
 
 ### Adding New Documentation
+
 Documentation files are located in `src/content/doc/` and organized by category and language:
+
 - **File structure**: `[category]--[title]/{en,fr}.md`
 - **Required languages**: Always add content in both English (`en.md`) and French (`fr.md`)
 - **Markdown format**: Use MDsveX (Markdown + Svelte components)
 - **Navigation**: Update `src/content/doc/summary.ts` to include new documentation in the appropriate category
 
 #### Creating New Documentation Steps:
+
 1. Create directory: `src/content/doc/[category]--[order]-[title]/`
 2. Add English version: `en.md` with required structure
 3. Add French version: `fr.md` with translated content
 4. Update `src/content/doc/summary.ts` to include the new entry in the appropriate category's items array
 
 ### Documentation Patterns
+
 - **Sections**: Use `## <Emoji src="🔤" /> Section Title` format
 - **Code examples**: Always include practical code examples with comments
 - **Parameters**: Document all parameters with type and description
@@ -102,11 +114,13 @@ Documentation files are located in `src/content/doc/` and organized by category 
 - **Import statements**: Show proper import syntax from 'odyc' library
 
 ### Available Components in Documentation
+
 - `<Emoji src="..." />`: For section headers and visual elements
 - `<Aside>`: For notes, warnings, and additional information
 - `<PaintDemo/>`, `<SoundDemo/>`, etc.: Interactive demos for specific features
 
 ### Bilingual Documentation
+
 - Maintain consistency between English and French versions
 - French translations should be natural, not literal
 - Technical terms (function names, parameters) remain in English
