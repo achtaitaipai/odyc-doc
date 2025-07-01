@@ -73,6 +73,23 @@ filter: {
 
 ---
 
+### `glow`
+
+![glow](/doc/glow.png)
+
+Creates a **luminous and vaporous** effect.
+
+```js
+filter: {
+  name: 'glow',
+  settings: {
+    intensity: 0.8    // Glow intensity
+  }
+}
+```
+
+---
+
 ### `neon`
 
 ![neon](/doc/neon.png)
