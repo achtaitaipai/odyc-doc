@@ -109,6 +109,14 @@ Vous pouvez supprimer plusieurs cases d'un coup avec `clearCells`.
 game.clearCells({ visible: false, x: 4 })
 ```
 
+### `sendMessageToCells`
+
+Cette méthode vous permet de déclencher la méthode `onMessage` sur toutes les cases ciblées. Elle prend en paramètre une `query` suivi du message qui est optionnel est peut-être de n'importe quel type.
+
+```js
+game.sendMessageToCells({ symbols: 'x' }, 'éteindre')
+```
+
 ---
 
 ## <Emoji src="🐒" /> `player`

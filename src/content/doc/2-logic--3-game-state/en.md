@@ -109,6 +109,14 @@ You can remove multiple cells at once with `clearCells`.
 game.clearCells({ visible: false, x: 4 })
 ```
 
+### `sendMessageToCells`
+
+This method allows you to trigger the `onMessage` method on all targeted cells. It takes a `query` parameter followed by an optional message of any type.
+
+```js
+game.sendMessageToCells({ symbols: 'x' }, 'turnOff')
+```
+
 ---
 
 ## <Emoji src="🐒" /> `player`

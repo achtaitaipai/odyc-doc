@@ -14,7 +14,7 @@ It lets you trigger actions or modify the game state.
 
 ### <Emoji src="🔎" /> Available event types
 
-There are six types of events:
+There are seven types of events:
 
 - **`onCollide`** — called when the player **collides** with the element
 - **`onEnter`** — called when the player **steps onto a tile** containing the element
@@ -22,6 +22,7 @@ There are six types of events:
 - **`onScreenEnter`** — called when the element **enters the visible screen**
 - **`onScreenLeave`** — called when the element **leaves the screen**
 - **`onTurn`** — called at the end of each turn, after the player attempted to move
+- **`onMessage`** - called via the `sendMessageToCells` method
 
 ```js
 createGame({
@@ -44,6 +45,9 @@ createGame({
 			},
 			onScreenLeave() {
 				alert('bye')
+			},
+			onMessage() {
+				alert('5 / 5')
 			}
 		}
 	}
@@ -141,6 +145,26 @@ createGame({
 If the new position already has properties, they will be overwritten.
 
 </Aside>
+
+### onMessage
+
+`onMessage` differs slightly from other events in that you trigger it yourself via `game.sendMessageToCells`. The `onMessage` method is called with two arguments: the event target and the message:
+
+```js
+const game = createGame({
+	templates: {
+		x: {
+			sprite: 1,
+			onMessage(target, message) {
+				if (message === 'turnOff') target.sprite = 0
+				else if (message === 'turnOn') target.sprite = 1
+			}
+		}
+	}
+})
+
+game.sendMessageToCells({ symbols: 'x' }, 'turnOff')
+```
 
 ---
 

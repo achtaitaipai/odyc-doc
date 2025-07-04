@@ -22,6 +22,7 @@ Il existe six types d’événements :
 - **`onScreenEnter`** — appelé quand l’élément **entre dans l’écran**
 - **`onScreenLeave`** — appelé quand l’élément **sort de l’écran**
 - **`onTurn`** — appelé à la fin de chaque tour, après que le joueur a tenté de se déplacer
+- **`onMessage`** - appelé via la méthode `sendMessageToCells`
 
 ```js
 createGame({
@@ -44,6 +45,9 @@ createGame({
       }
       onScreenLeave() {
         alert('bye')
+      }
+      onMessage() {
+        alert('message')
       }
     }
   }
@@ -141,6 +145,26 @@ createGame({
 Si la nouvelle position a déjà des propriétés celles-ci seront écrasées.
 
 </Aside>
+
+### onMessage
+
+`onMessage` diffère légèrement des autres évènements dans le sens ou c'est vous qui le déclenché via `game.sendMessageToCells`. La méthode `onMessage` est appelée avec deux arguments: la cible de l'évènement et le message:
+
+```js
+const game = createGame({
+	templates: {
+		x: {
+			sprite: 1,
+			onMessage(cible, message) {
+				if (message === 'éteindre') cible.sprite = 0
+				else if (message === 'allumer') cible.sprite = 1
+			}
+		}
+	}
+})
+
+game.sendMessageToCells({ symbols: 'x' }, 'éteindre')
+```
 
 ---
 
