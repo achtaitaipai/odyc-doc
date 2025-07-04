@@ -73,18 +73,19 @@ createGame({
 
 ### <Emoji src="📋" /> Propriétés disponibles
 
-| Propriété / Méthode | Type                   | Description                                        | Lecture seule |
-| ------------------- | ---------------------- | -------------------------------------------------- | ------------- |
-| `solid`             | `boolean`              | Rend l’objet traversable ou non                    | Non           |
-| `visible`           | `boolean`              | Affiche ou masque l’objet                          | Non           |
-| `sprite`            | `number` \| `string`   | Change l’apparence de l’objet                      | Non           |
-| `sound`             | `string`\| `object`    | Change le son joué lors d’une interaction          | Non           |
-| `dialog`            | `string` \| `string[]` | Modifie le texte affiché dans la boîte de dialogue | Non           |
-| `end`               | `string` \| `string[]` | Déclenche une fin de jeu personnalisée             | Non           |
-| `symbol`            | `string`               | Le caractère représentant l’objet dans la `map`    | Oui           |
-| `position`          | `[number, number]`     | Coordonnées `[x, y]` de l’objet sur la carte       | Oui           |
-| `isOnScreen`        | `boolean`              | `true` si l'objet est à l'écran                    | Oui           |
-| `remove`            | `() => void`           | Supprime l’élément                                 | —             |
+| Propriété / Méthode | Type                   | Description                                         | Lecture seule |
+| ------------------- | ---------------------- | --------------------------------------------------- | ------------- |
+| `solid`             | `boolean`              | Rend l’objet traversable ou non                     | Non           |
+| `visible`           | `boolean`              | Affiche ou masque l’objet                           | Non           |
+| `sprite`            | `number` \| `string`   | Change l’apparence de l’objet                       | Non           |
+| `sound`             | `string`\| `object`    | Change le son joué lors d’une interaction           | Non           |
+| `dialog`            | `string` \| `string[]` | Modifie le texte affiché dans la boîte de dialogue  | Non           |
+| `end`               | `string` \| `string[]` | Déclenche une fin de jeu personnalisée              | Non           |
+| `symbol`            | `string`               | Le caractère représentant l’objet dans la `map`     | Oui           |
+| `position`          | `[number, number]`     | Coordonnées `[x, y]` de l’objet sur la carte        | Oui           |
+| `isOnScreen`        | `boolean`              | `true` si l'objet est à l'écran                     | Oui           |
+| `remove`            | `() => void`           | Supprime l’élément                                  | —             |
+| `moveTo`            | `(x, y) => void`       | Déplace l'élément à la position passée en argument. | —             |
 
 ### Exemple : changer une propriété
 
@@ -103,15 +104,14 @@ createGame({
 })
 ```
 
-### Supprimer un objet
+### Supprimer une case
 
-Pour faire disparaître un objet lorsqu’on le touche, utilisez la méthode `remove()` :
+Pour supprimer les propriétés d'une case lorsqu’on la touche, utilisez la méthode `remove()` :
 
 ```js
 createGame({
 	templates: {
 		x: {
-			dialog: 'Bonjour',
 			onCollide(cible) {
 				cible.remove()
 			}
@@ -119,6 +119,28 @@ createGame({
 	}
 })
 ```
+
+### Déplacer une case
+
+Pour déplacer une case à une nouvelle position, utilisez `moveTo(x, y)` :
+
+```js
+createGame({
+	templates: {
+		x: {
+			onCollide(cible) {
+				cible.moveTo(3, 2)
+			}
+		}
+	}
+})
+```
+
+<Aside variant="Warning">
+
+Si la nouvelle position a déjà des propriétés celles-ci seront écrasées.
+
+</Aside>
 
 ---
 

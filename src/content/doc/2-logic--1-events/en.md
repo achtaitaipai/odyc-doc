@@ -85,6 +85,7 @@ createGame({
 | `position`        | `[number, number]`     | `[x, y]` position of the object on the grid         | Yes       |
 | `isOnScreen`      | `boolean`              | `true` if the object is currently visible on screen | Yes       |
 | `remove`          | `() => void`           | Removes the element from the game                   | —         |
+| `moveTo`          | `(x, y) => void`       | Moves the element to the specified position         | —         |
 
 ### Example: change a property
 
@@ -103,15 +104,14 @@ createGame({
 })
 ```
 
-### Remove an object
+### Remove an element
 
-To make an object disappear after interaction, use the `remove()` method:
+To remove an element's properties when touched, use the `remove()` method:
 
 ```js
 createGame({
 	templates: {
 		x: {
-			dialog: 'Hello',
 			onCollide(target) {
 				target.remove()
 			}
@@ -119,6 +119,28 @@ createGame({
 	}
 })
 ```
+
+### Move an element
+
+To move an element to a new position, use `moveTo(x, y)`:
+
+```js
+createGame({
+	templates: {
+		x: {
+			onCollide(target) {
+				target.moveTo(3, 2)
+			}
+		}
+	}
+})
+```
+
+<Aside variant="Warning">
+
+If the new position already has properties, they will be overwritten.
+
+</Aside>
 
 ---
 
