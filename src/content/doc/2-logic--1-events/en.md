@@ -14,9 +14,11 @@ It lets you trigger actions or modify the game state.
 
 ### <Emoji src="🔎" /> Available event types
 
-There are seven types of events:
+There are nine types of events:
 
+- **`onCollideStart`** — called when the player **collides** with the element, occurs before dialog, sound and end
 - **`onCollide`** — called when the player **collides** with the element
+- **`onEnterStart`** — called when the player **steps onto a tile** containing the element, occurs before dialog, sound and end
 - **`onEnter`** — called when the player **steps onto a tile** containing the element
 - **`onLeave`** — called when the player **leaves a tile** containing the element
 - **`onScreenEnter`** — called when the element **enters the visible screen**
@@ -28,8 +30,14 @@ There are seven types of events:
 createGame({
 	templates: {
 		x: {
+			onCollideStart() {
+				alert('collide start')
+			},
 			onCollide() {
 				alert(1)
+			},
+			onEnterStart() {
+				alert('enter start')
 			},
 			onEnter() {
 				alert(2)

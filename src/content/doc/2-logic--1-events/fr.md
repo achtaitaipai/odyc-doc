@@ -14,10 +14,12 @@ Ils permettent de déclencher des actions ou de modifier l’état du jeu.
 
 ### <Emoji src="🔎" /> Types d’événements
 
-Il existe six types d’événements :
+Il existe neuf types d'événements :
 
-- **`onCollide`** — appelé quand le joueur **entre en collision** avec l’élément
-- **`onEnter`** — appelé quand le joueur **entre sur une case** contenant l’élément
+- **`onCollideStart`** — appelé quand le joueur **entre en collision** avec l'élément, déclenché avant dialog, sound et end
+- **`onCollide`** — appelé quand le joueur **entre en collision** avec l'élément
+- **`onEnterStart`** — appelé quand le joueur **entre sur une case** contenant l'élément, déclenché avant dialog, sound et end
+- **`onEnter`** — appelé quand le joueur **entre sur une case** contenant l'élément
 - **`onLeave`** — appelé quand le joueur **quitte une case** contenant l’élément
 - **`onScreenEnter`** — appelé quand l’élément **entre dans l’écran**
 - **`onScreenLeave`** — appelé quand l’élément **sort de l’écran**
@@ -28,8 +30,14 @@ Il existe six types d’événements :
 createGame({
   templates: {
     x: {
+      onCollideStart() {
+        alert('début collision')
+      },
       onCollide() {
         alert(1)
+      },
+      onEnterStart() {
+        alert('début entrée')
       },
       onEnter() {
         alert(2)
